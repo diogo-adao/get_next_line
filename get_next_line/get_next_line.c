@@ -16,3 +16,15 @@ char	*get_next_line(int fd)
 {
 
 }
+
+#include <stdio.h>
+#include <fcntl.h>
+int main()
+{
+    int fd = open("teste.txt", O_RDONLY);
+    char *line;
+
+    while (line = get_next_line(fd))
+        printf("%s", line);
+    return (0);
+}
